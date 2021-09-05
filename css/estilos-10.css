@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: #19171c;
+    font-size: 1.2rem;
+}
+
+
+/*Go top button*/
+
+.go-top-container {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    z-index: -1;
+}
+
+.go-top-button {
+    width: 0rem;
+    height: 0rem;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-0%, -0%);
+    z-index: -1;
+}
+
+.go-top-button i {
+    position: absolute;
+    font-size: 1.7rem;
+    top: 48%;
+    left: 50%;
+    transform: translate(-0%, -0%) scale(0);
+    color: #fff;
+    transition: .2s;
+}
+
+.show {
+    z-index: 10;
+}
+
+.show .go-top-button {
+    animation: popup .6s ease-in-out;
+    width: 3.6rem;
+    height: 3.6rem;
+    z-index: 11;
+}
+
+.show i {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup {
+    0% {
+        height: 0rem;
+        width: 0rem;
+    }
+    50% {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+    100% {
+        width: 3.6rem;
+        height: 3.6rem;
+    }
+}
+
+
+/*Cambio de pagina*/
+
+.pages {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 220%;
+    left: 90%;
+}
+
+.text-disabled {
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+}
+
+.pages_number {
+    margin-right: 0.5%;
+    text-decoration: none;
+    color: rgb(255, 115, 0);
+}
+
+.pages>a i {
+    color: #000;
+}
+
+
+/*Menu*/
+
+
+/*.nav>li>a>i {
+    position: absolute;
+    top: 2%;
+    left: 8%;
+    color: white;
+}
+
+#minecraft_forum {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 7.5px;
+    display: none;
+    margin-left: 100px;
+    margin-top: 0px;
+}
+
+#feed {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 7.5px;
+    display: none;
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 37px;
+}
+
+.nav li:hover>ul {
+    display: block;
+}
+*/
+
+
+/*.btn-menu {
+    position: absolute;
+    top: 1.1%;
+    left: 2%;
+    font-family: 'Oswald', sans-serif;
+    color: red;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 7px 25px;
+    text-decoration: none;
+    outline: none;
+}
+
+#header {
+    margin: auto;
+    width: 500px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+#icon-menu>i {
+    margin-left: 150%;
+    width: 70px;
+}
+
+.nav li a {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    visibility: visible;
+}
+
+.nav>li {
+    float: left;
+}
+
+.nav li a:hover {
+    background-color: #000;
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.nav li:hover>ul {
+    display: block;
+}*/
+
+
+/*Buscador*/
+
+#input-search {
+    width: 21%;
+    background: #fff;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 20px;
+    text-indent: 10px;
+    position: absolute;
+    top: 1.5%;
+    left: 73%;
+}
+
+.content-search {
+    width: 30%;
+    height: 17%;
+    position: absolute;
+    top: 60px;
+    left: 70%;
+    display: none;
+}
+
+.content-table {
+    width: 97.5%;
+    max-height: 200px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.content-table table {
+    width: 100%;
+}
+
+tbody tr td a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+tbody tr td a:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#table_length,
+#table_filter,
+#table_info,
+#table_paginate {
+    display: none;
+}
+
+
+/*Navegacion*/
+
+.navegacion>img {
+    margin-left: 15%;
+    margin-right: 4%;
+    transform: translate(-50%, -50%);
+    top: 3%;
+    left: 0%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.navegacion>a {
+    margin-right: 1.5%;
+    margin-left: 10%;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    top: 4%;
+    left: 15%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#forums {
+    color: white;
+    transform: translate(-50%, -50%);
+    top: 4%;
+    left: 30%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.account {
+    margin-bottom: 10px;
+    margin-left: 30%;
+}
+
+.account>a {
+    margin-right: 2%;
+}
+
+.btn-descargar {
+    font-family: 'Oswald', sans-serif;
+    color: red;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 15px 30px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-descargar:hover {
+    transition: .5s;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+/*Buscador*/
+
+
+/*.ctn-icon-search {
+        display: flex;
+        transform: translate(-50%, -50%);
+        top: 5%;
+        left: 78%;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    .ctn-icon-search i{
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: all 300ms;
+    }
+
+    .ctn-icon-search i:hover {
+        color: aqua
+    }
+
+    #ctn-bars-search {
+        position: fixed;
+        top: -40px;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+    }
+
+    #ctn-bars-search input {
+        display: block;
+        width: 1200px;
+        margin: auto;
+        padding: 10px;
+        font-size: 18px;
+        outline: 0;
+        transform: translate(-50%, -50%);
+        top: 10%;
+        left: 48.3%;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    #box-search {
+        position: fixed;
+        top: 118px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1200px;
+        background: #fff;
+        z-index: 8;
+        overflow: hidden;
+    }
+
+    #box-search li a {
+        display: block;
+        width: 1200px;
+        color: black;
+        padding: 12px 20px;
+    }
+
+    #box-search li a:hover {
+        background: rgb(230, 230, 230);
+    }
+
+    #box-search li a i {
+        margin-right: 1%;
+        color: black;
+    }
+
+    #cover-ctn-search {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        background: rgba(0, 0, 0, 0);
+        z-index: 7;
+    }
+
+    /*.buscar {
+        display: flex;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background: #068;
+        padding: 10px;
+        height: 80px;
+        border-radius: 40px;
+    }
+    
+    .buscar_texto {
+        border: none;
+        background: none;
+        outline: none;
+        color: white;
+        font-size: 20px;
+        float: left;
+        line-height: 60px;
+        transition: .3s;
+        width: 0;
+    }
+
+    .boton {
+        width: 40px;
+        height: 40px;
+        text-decoration: none;
+        color: white;
+        font-size: 30px
+    }
+
+    */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+/*
+    .navegacion-contenedor {
+        left: 30%;
+        position: absolute;
+        top: 30%;
+        transform: translate(-50%, -50%);
+    }
+
+    .navegacion-contenedor>a {
+        color: #19171c;
+        margin-right: 10px;
+        font: inherit;
+        font-size: 80%;
+    }
+    */
+
+@media screen and (max-width: 1920px) {
+    .navegacion>a {
+        font-size: 30px;
+        top: 2.5%;
+        font-family: 'Oswald', sans-serif;
+    }
+    .navegacion>img {
+        top: 1.9%;
+    }
+    #forums {
+        top: 2.5%;
+    }
+    .btn-descargar {
+        float: left;
+        margin-left: 0;
+        font-family: 'Oswald', sans-serif;
+    }
+    .title-mod {
+        margin-top: 5%px;
+        font-family: 'Oswald', sans-serif;
+    }
+    .desc {
+        margin-left: 10%px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px;
+    }
+    .pages {
+        top: 137%;
+        left: 92%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .navegacion>a {
+        font-size: 30px;
+        top: 4%;
+    }
+    #forums {
+        font-size: 30px;
+        top: 4%;
+    }
+    .navegacion>img {
+        top: 3%;
+        width: 50px;
+        height: 35px;
+    }
+    #input-search {
+        top: 1%;
+    }
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    .pages {
+        top: 224%;
+        left: 87%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .navegacion>a {
+        font-size: 33px;
+        font-family: 'Oswald', sans-serif;
+    }
+    .btn-descargar {
+        float: none;
+    }
+    .title-mod {
+        float: none;
+        font-family: 'Fira Sans', sans-serif;
+    }
+    .pages {
+        top: 200%;
+        left: 87%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .navegacion>a {
+        font-size: 35px;
+        top: 2%;
+    }
+    .navegacion>img {
+        margin-left: 10%;
+        top: 1.5%;
+        width: 50px;
+        height: 30px;
+    }
+    .title-mod {
+        font-size: 35px;
+        float: none;
+    }
+    .btn-descargar {
+        float: none;
+    }
+    .descargas-contenedor {
+        display: none;
+    }
+    #forums {
+        top: 2%;
+        left: 40%;
+    }
+    .pages {
+        top: 132%;
+        left: 75%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .navegacion>a {
+        top: 4%;
+    }
+    .navegacion>img {
+        top: 3%;
+    }
+    #forums {
+        top: 4.4%;
+    }
+    .pages {
+        top: 292%;
+        left: 83%;
+    }
+}
+
+@media screen and (max-width: 800px) and (max-height: 1280px) {
+    .navegacion>a {
+        top: 2.3%;
+    }
+    .navegacion>img {
+        top: 1.6%;
+    }
+    #forums {
+        top: 2.3%;
+    }
+    .pages {
+        top: 152%;
+        left: 85%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #forums {
+        margin-left: 15%;
+        top: 2.5%;
+    }
+    .navegacion>img {
+        margin-left: 9%;
+        top: 1.9%;
+    }
+    .navegacion>a {
+        top: 2.5%;
+    }
+    .pages {
+        top: 205%;
+        left: 80%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .pages {
+        top: 388%;
+        left: 75%;
+    }
+    .navegacion>a {
+        top: 5.7%;
+        left: 17%;
+    }
+    #forums {
+        top: 6%;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .navegacion>a {
+        top: 3%;
+        left: 19%;
+        font-size: 25px;
+    }
+    #forums {
+        font-size: 25px;
+        top: 3%;
+        left: 35%;
+    }
+    .go-top-button {
+        display: none;
+    }
+    .go-top-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #forums {
+        visibility: hidden;
+    }
+    .navegacion>a {
+        font-size: 34px;
+        font-family: 'Oswald', sans-serif;
+        margin-right: 1%;
+        top: 3.6%;
+        left: 35%;
+        visibility: visible;
+    }
+    .navegacion>img {
+        margin-left: 15%;
+        top: 2.5%;
+    }
+    .btn-descargar {
+        font-size: 25px;
+        padding: 10px 20px;
+    }
+    .title-mod {
+        font-size: 30px;
+    }
+    .desc {
+        font-size: 20px;
+    }
+    .go-top-button {
+        display: none;
+    }
+    .go-top-container {
+        display: none;
+    }
+    .pages {
+        top: 251%;
+        left: 65%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .pages {
+        position: relative;
+        margin-left: 0%;
+        margin-top: 370%;
+    }
+}
+
+@media screen and (max-width: 420px) and (max-height: 825px) {
+    .pages {
+        top: 287%;
+        left: 83%;
+    }
+}
+
+@media screen and (max-width: 375px) and (max-height: 667px) {
+    .pages {
+        position: relative;
+        margin-left: 0%;
+        margin-top: 430%;
+    }
+}
+
+@media screen and (max-width: 375px) and (max-height: 812px) {
+    .pages {
+        position: absolute;
+        top: 130%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .pages {
+        top: 258%;
+        left: 60%;
+    }
+}
+
+@media screen and (max-width: 360px) and (max-height: 740px) {
+    .pages {
+        top: 177%;
+        left: 85%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .navegacion>a {
+        font-size: 18px;
+    }
+    .content-table {
+        width: 115%;
+    }
+    .content-search {
+        left: 63%;
+    }
+    .go-top-button {
+        display: none;
+    }
+    .go-top-container {
+        display: none;
+    }
+    .pages {
+        top: 452%;
+        left: 70%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .navegacion>a {
+        font-size: 20px;
+        font-family: 'Oswald', sans-serif;
+    }
+    .navegacion>img {
+        width: 40px;
+        height: 20px;
+    }
+    .desc {
+        font-size: 18px;
+    }
+    .title-mod {
+        font-size: 25px;
+    }
+    .btn-descargar {
+        padding: 4px 8px;
+        font-size: 20px;
+    }
+    .go-top-button {
+        display: none;
+    }
+    .go-top-container {
+        display: none;
+    }
+}
+
+
+/*@media screen and (min-width: 480px) {
+        .buscar:hover > .buscar_texto {
+            width: 190px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .buscar:hover > .buscar_texto {
+            width: 300px;
+        }
+    }
+    */
